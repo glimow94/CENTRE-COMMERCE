@@ -1,0 +1,22 @@
+<div class="content container-fluid d-flex justify-content-center" fxLayout="row wrap" fxLayoutGap="16px grid">
+  <div class="" fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let item of ItemList">
+    <mat-card class="item mat-elevation-z4" >
+      <mat-card-header>
+        <mat-card-title><a class="title" routerLink="/single-item">{{item.title}}</a></mat-card-title>
+      </mat-card-header>
+      <img mat-card-image class="img" src="{{item.images[0]}}">
+      
+      <mat-card-actions class=" d-flex justify-content-end mb-1 mr-1">
+        <button class="buy-button btn btn-outline-success btn-lg d-flex" mat-button>
+            <mat-icon class="cart-icon" aria-hidden="false" aria-label="Example home icon">shopping_cart</mat-icon>
+            <p class="mb-0 ml-1">{{item.price}}€</p>
+        </button>
+        <!-- <mat-card-content>
+          
+        </mat-card-content> -->
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+       
+   

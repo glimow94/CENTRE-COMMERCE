@@ -1,0 +1,84 @@
+.back-icon{
+    font-size: 50px;
+    cursor: pointer;
+}
+.item-wrapper{
+    width: 100%;
+}
+.carousel{
+   margin: 1rem;
+   width: min-content;
+   align-self: center;
+   vertical-align:top;
+}
+.carousel .carousel-inner{
+    margin:0 1rem;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    border: 1px solid black;
+    padding: 20px;
+    background-color: rgba(17, 17, 17, 0.308);
+    align-self: center;
+    margin: 0;
+}
+
+.carousel-control-prev,
+.carousel-control-next{
+    padding: 2rem;
+}
+
+/* .carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: red;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: red;
+} */
+.slider-image{
+    width: 46vh;
+    margin: 0;
+    padding: 0;
+}
+
+.item-info{
+    margin: 1rem;
+}
+.item-info .item-title{
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 2rem;
+}
+.item-info .item-price{
+    font-size: 30px;
+    font-weight: 500;
+    color: rgb(189, 53, 0);
+    margin: 1rem 0;
+}
+.item-info .item-description{
+    font-size: 16px;
+    padding: 3rem 0;
+    line-height: 1.5rem;
+}
+.star-valutation{
+    align-self: baseline;
+    margin-left: 1rem;
+}
+.item-info .star-icon{
+    color: rgb(236, 201, 42);
+    font-size: 28px;
+}
+.star-valutation .item-star{
+    margin: 5px 0 0 3px;
+}
+.buy-button{
+    float: right;
+}

@@ -1,0 +1,31 @@
+.content{
+    border-radius: 20px;
+    padding: 1rem 0;
+}
+.content .title{
+    font-size: 16px;
+}
+.content .price-text{
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.content .item{
+    border-radius: 10px;
+    background-color: rgb(248, 255, 241);
+    cursor: pointer;
+}
+.searchLabel{
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    font-style: italic;
+    font-weight: 500;
+}
+.delete-search-button{
+    color: rgb(255, 2, 2);
+    font-size: 16px;
+    font-style: normal;
+    margin-left: 10px;
+}
+

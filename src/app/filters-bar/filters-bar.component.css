@@ -1,0 +1,18 @@
+.filters-wrapper{
+    background-color: whitesmoke;
+    border-right-style: solid;
+    border-right-width: 4px;
+    border-right-color: rgb(0, 119, 255);
+    width: min-content;
+    height: 100%;
+}
+
+.filters-wrapper .p{
+    color: black;
+}
+.filters-wrapper .price-form{
+    min-width: 150px;
+}
+.dropdown-wrapper button{
+    width: 150px;
+}

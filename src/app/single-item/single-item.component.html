@@ -1,0 +1,52 @@
+<div>
+    <mat-icon class="back-icon" [routerLink]="['/items-list','Tutti','']" href="">keyboard_backspace</mat-icon>
+</div>
+<div class="item-wrapper container d-flex align-content-center" fxLayout="row" fxLayout.xs="column">
+
+    <!-- SLIDER/CAROUSEL IMMAGINI -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
+        <ol class="carousel-indicators">
+            <li *ngFor="let img of item.images; let index=index; let isFirst = first" [ngClass]="{active:isFirst}" data-target="#carouselExampleIndicators" data-slide-to="index"></li>
+        </ol>
+        <div class="carousel-inner">
+
+          <div class="carousel-item " *ngFor="let image of item.images; let index = index;let isFirst = first" [ngClass]="{active:isFirst}">
+            <img mat-card-image class="slider-image" src="{{image}}" alt="immagine">
+          </div>
+          
+        </div>
+
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+    </div>
+    
+    <!-- ITEM INFO -->
+
+    <div class="item-info" fxLayout="column">
+        <p class="item-title">{{item.title}}</p>
+        <div fxLayout="row">
+          <mat-icon class="star-icon" *ngFor="let number of rate">star_rate</mat-icon>
+          <p class="item-star">{{item.rating}}</p>
+        </div>
+        <div class="text-addtocart-wrapper">
+          <p class="item-price">{{item.price}} €</p>
+          <div class="text-center">
+            <button class="buy-button btn btn-primary btn d-flex" (click) = "addToCartClick()">
+              <mat-icon class="cart-icon mr-1" aria-hidden="false" aria-label="Example home icon">shopping_cart</mat-icon>
+              AGGIUNGI AL CARRELLO
+            </button>
+          </div>
+        </div>
+        <p class="item-description">{{item.description}}</p>
+    </div>
+
+</div>
+
+
+

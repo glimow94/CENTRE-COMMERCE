@@ -1,0 +1,15 @@
+<div class="filters-wrapper shadow-sm bg-white p-4" fxLayout.sm="row" fxFlex.sm="100%" fxLayout.xs="row" fxFlex.xs="100%">
+  <div class="dropdown-wrapper form-group pr-1">
+    <button [textContent] = "buttonTitle" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" *ngFor="let item of categories" [textContent]="item" (click)="changeCategory(item)" [routerLink]="['/items-list',item,searchText]" href="#"></a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" [textContent]="last_categ" (click)="changeCategory(last_categ)" [routerLink]="['/items-list',last_categ,searchText]" href="#"></a>
+    </div>
+  </div>
+  <div class="form-group" fxLayout.sm="row" fxLayout.xs="row">
+    <label fxHide.xs >Prezzo max. (EUR)</label>
+    <input [ngModel]="selected_price" placeholder="Prezzo Max." type="number" class="form-control price-form" id="price" size="1">
+  </div>
+ 
+</div>
