@@ -12,6 +12,9 @@
 .wrapper .cart .title{
     margin-bottom: 1rem;
 }
+.single-item{
+    pointer-events: none;
+}
 .icon-wrapper{
     background-color: rgba(73, 62, 63, 0.774);
     width: 70px;
@@ -35,4 +38,47 @@
     margin: 10px 2px 0 -20px;
     display: inline-flex;
     vertical-align: middle;
+}
+.elem-text{
+    margin: 4px 2px 4px 2px;
+}
+.item-price{
+    color: rgb(211, 74, 74);
+}
+
+.lessmore-button{
+    border-radius: 50px;
+    text-align: center;
+    height:25px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 5px;
+    pointer-events:painted;
+}
+.lessmore-text{
+    color: rgb(238, 49, 49);
+    font-weight: bold;
+}
+.num-element{
+    margin-top:5px;
+    font-weight: bold;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.delete-item-btn{
+    width:25px;
+    height:25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    pointer-events:painted;
+}
+.tot-text{
+    font-size: 20px;
+}
+.tot-price{
+    font-size: 20px;
+    color:rgb(22, 235, 86);
+    margin-right: 10px;
+    font-weight: bold;
 }

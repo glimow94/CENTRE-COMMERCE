@@ -37,7 +37,13 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   deleteElem(elem_id){
-    this.shoppingCartService.deleteElementCart(elem_id)
+    this.shoppingCartService.deleteElementCart(elem_id);
   }
 
+  addQuantity(elem_id){
+    this.shoppingCartService.moreQuantity(elem_id);
+  }
+  lessQuantity(elem_id){
+    this.shoppingCartService.lessQuantity(elem_id);
+  }
 }

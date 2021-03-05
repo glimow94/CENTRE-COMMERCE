@@ -4,7 +4,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
-    <form class="form-inline mx-5 ">
+    <form class="form-inline mx-5 form-search">
         <input class="form-control" [ngModel]="searchText" type="search" placeholder="Cerca prodotto" aria-label="Search" (ngModelChange)="searchInput($event)" [ngModelOptions]="{standalone: true}">
         <button [routerLink]="['/items-list',category,searchText]" class="btn btn-dark my-2 my-sm-1" type="submit">CERCA</button>
     </form>
@@ -13,10 +13,10 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" href="#">Contatti</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link" href="#">Offerte</a>
       </li>
     </ul>
   </div>

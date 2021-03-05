@@ -36,10 +36,16 @@
         </div>
         <div class="text-addtocart-wrapper">
           <p class="item-price">{{item.price}} €</p>
-          <div class="text-center">
+          <div class="text-center" *ngIf="isInCart == false">
             <button class="buy-button btn btn-primary btn d-flex" (click) = "addToCartClick()">
-              <mat-icon class="cart-icon mr-1" aria-hidden="false" aria-label="Example home icon">shopping_cart</mat-icon>
+              <mat-icon class="cart-icon mr-1" aria-hidden="false" aria-label="Example home icon">add_shopping_cart</mat-icon>
               AGGIUNGI AL CARRELLO
+            </button>
+          </div>
+          <div class="text-center" *ngIf="isInCart == true">
+            <button class="buy-button btn btn-success btn d-flex">
+              <mat-icon class="cart-icon mr-1" aria-hidden="false" aria-label="Example home icon">add_task</mat-icon>
+              PRODOTTO AGGIUNTO AL CARRELLO
             </button>
           </div>
         </div>

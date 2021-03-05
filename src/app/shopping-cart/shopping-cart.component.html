@@ -1,40 +1,53 @@
 <div class="wrapper">
-
-        <mat-card *ngIf="showcart"  class="cart item mat-elevation-z4" >
-                <div class="content container-fluid p-3 m1" fxLayout="row wrap" fxLayoutGap="16px grid">
-                    <mat-card-header>
-                        <mat-card-title>Carrello</mat-card-title>
-                        <mat-icon class="cart-icon" aria-hidden="false" aria-label="Example home icon" >shopping_cart</mat-icon>
-                    </mat-card-header>
+    <mat-card *ngIf="showcart"  class="cart item mat-elevation-z4" >
+        <div class="content container-fluid p-3 m1" fxLayout="row wrap" fxLayoutGap="16px grid">
+            <mat-card-header>
+                <mat-card-title>Carrello</mat-card-title>
+                <mat-icon class="cart-icon" aria-hidden="false" aria-label="Example home icon" >shopping_cart</mat-icon>
+            </mat-card-header>
+        </div>
+        <mat-nav-list class="mb-4 row">
+            <mat-list-item *ngFor="let item of itemList" class="single-item">
+                <p class="item-title elem-text">{{item.title}}</p>
+                <p class="item-price elem-text">{{item.price}}€</p>
+                <div class="lessmore-wrapper m-3" fxLayout="row">
+                    <button class = "lessmore-button" (click)="lessQuantity(item.title)" ><p class = "lessmore-text">-</p></button>
+                    <p class="num-element">{{item.quantity}}</p>
+                    <button class = "lessmore-button" (click)="addQuantity(item.title)"><p class = "lessmore-text">+</p></button>
                 </div>
-                <mat-nav-list class="mb-4 row">
-                    <mat-list-item *ngFor="let item of itemList" class="single-item">
-                        <p class="item-title">{{item.title}}</p>
-                        <p class="item-price">{{item.price}}€</p>
-                        <div class="lessmore-wrapper m-3" fxLayout="row">
-                            <button class = "lessmore-button" ><p>+</p></button>
-                            <p>1</p>
-                            <button class = "lessmore-button" ><p>-</p></button>
-                        </div>
-                        <button class = "delete_item" (click)="deleteElem(item.title)" ><p>ELIMINA</p></button>
-                        <mat-divider></mat-divider>
-                    </mat-list-item>
-                </mat-nav-list>
-                <mat-card-actions class="mb-1 mr-1 d-flex justify-content-between">
-                    <p class="tot-price ml-4">
-                        Totale : {{totPrice}}
-                    </p>
-                    <button class="buy-button btn btn-success btn-sm d-flex" mat-button>
-                        <p class="mb-0 ml-1">ACQUISTA</p>
-                    </button>
-                    <!-- <mat-card-content>
-                    </mat-card-content> -->
-                </mat-card-actions>
-        </mat-card>
+                <button class = "delete-item-btn btn btn-outline-danger btn-sm" (click)="deleteElem(item.title)" >
+                    <mat-icon class="delete-icon" aria-hidden="false" aria-label="Example delete icon" >delete_forever</mat-icon>
+                </button>
+                <mat-divider></mat-divider>
+            </mat-list-item>
+        </mat-nav-list>
+        <mat-card-actions class="mb-1 mr-1 d-flex justify-content-between" *ngIf="itemList.length > 0">
+            <div fxLayout="row wrap">
+                <p class="tot-text ml-4">
+                    Totale :
+                </p>
+                <p class="tot-price ml-4">
+                    {{totPrice}}€
+                </p>
+            </div>
+            <button class="buy-button btn btn-success btn-sm d-flex"  mat-button>
+                <p class="mb-0 ml-1">VAI ALLA CASSA</p>
+            </button>
+            <!-- <mat-card-content>
+            </mat-card-content> -->
+        </mat-card-actions>
+        <mat-card-actions class="mb-1 mr-1 d-flex justify-content-between" *ngIf="itemList.length == 0">
+            <p class="tot-price ml-4">
+                Il tuo carrello è vuoto
+            </p>
+        </mat-card-actions>
+    </mat-card>
 
 
-    <div class="icon-wrapper container text-center" (click)="showCart()">
+    <div class="icon-wrapper container text-center" (click)="showCart()" *ngIf="itemList.length > 0">
         <mat-icon matBadgeColor="warn" matBadge="{{itemList.length}}" matBadgeSize="large" class="cart-icon" aria-hidden="false" aria-label="Example home icon" >shopping_cart</mat-icon>
     </div>
-
+    <div class="icon-wrapper container text-center" (click)="showCart()" *ngIf="itemList.length == 0">
+        <mat-icon matBadgeColor="warn"  matBadgeSize="large" class="cart-icon" aria-hidden="false" aria-label="Example home icon" >shopping_cart</mat-icon>
+    </div>
 </div>
